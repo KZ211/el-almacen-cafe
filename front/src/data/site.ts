@@ -12,4 +12,11 @@ export const site = {
 		{ label: 'Salón & Mostrador', value: '10:00 a 00:00 hs' },
 		{ label: 'Delivery propio / WhatsApp', value: '12:00 a 23:45 hs' },
 	],
+	nav: [
+		{ href: '#inicio', icon: 'home', label: 'Inicio' },
+		{ href: '#sabores', icon: 'icecream', label: 'Sabores' },
+		{ href: '#cafe', icon: 'coffee', label: 'Café' },
+		{ href: '#carta', icon: 'menu_book', label: 'Carta' },
+		{ href: '#resenas', icon: 'reviews', label: 'Reseñas' },
+	],
 };
