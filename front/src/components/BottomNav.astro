@@ -1,11 +1,17 @@
 ---
 import Icon from './Icon.astro';
+import FloatingWhatsApp from './FloatingWhatsApp.astro';
 import { site } from '../data/site';
 ---
 
-<nav class="pb-safe md:hidden fixed bottom-0 z-50 w-full bg-surface/90 shadow-[0_-4px_20px_rgba(43,27,23,0.08)] backdrop-blur-xl">
-	<div class="flex items-center justify-between gap-space-xs px-margin py-space-xs">
-		<div class="flex flex-1 items-center justify-around">
+<!-- Un solo contenedor fijo para la barra y el botón flotante, así no se desfasan al hacer scroll en mobile -->
+<div class="pointer-events-none fixed inset-x-0 bottom-0 z-50">
+	<FloatingWhatsApp />
+	<nav
+		aria-label="Principal"
+		class="pb-safe pointer-events-auto bg-surface/90 shadow-[0_-4px_20px_rgba(43,27,23,0.08)] backdrop-blur-xl md:hidden"
+	>
+		<div class="flex items-center justify-around px-margin py-space-xs">
 			{
 				site.nav.map((link, i) => (
 					<a
@@ -22,15 +28,5 @@ import { site } from '../data/site';
 				))
 			}
 		</div>
-		<a
-			href={site.whatsappUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-			aria-label="Pedir por WhatsApp"
-			class="flex h-11 shrink-0 items-center justify-center gap-space-xs rounded-lg bg-primary px-space-sm text-label-md tracking-wider text-on-primary uppercase shadow-[0_4px_12px_rgba(14,4,2,0.2)] transition-colors hover:bg-primary-container"
-		>
-			<Icon name="chat" class="text-[18px]" />
-			<span>Pedir</span>
-		</a>
-	</div>
-</nav>
+	</nav>
+</div>
