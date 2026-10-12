@@ -112,6 +112,9 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
+    @variant md {
+      scroll-padding-top: 4.5rem;
+    }
   }
   body {
     overscroll-behavior: none;

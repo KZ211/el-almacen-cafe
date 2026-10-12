@@ -21,18 +21,18 @@ const photos = [
 ];
 ---
 
-<section class="flex flex-col gap-space-md px-margin pb-space-xl">
+<section class="flex flex-col gap-space-md px-margin pb-space-xl md:mx-auto md:w-full md:max-w-6xl md:px-8 md:gap-space-lg md:pb-16">
 	<div class="flex items-end justify-between">
 		<SectionTitle eyebrow="Momentos Almacén" title="La Experiencia" />
 		<span class="text-label-sm text-on-surface-variant">#ElAlmacenCafe</span>
 	</div>
 
-	<div class="grid grid-cols-2 gap-space-sm">
+	<div class="grid grid-cols-2 gap-space-sm md:grid-cols-4 md:gap-space-md">
 		{
 			photos.map((photo) => (
-				<figure class="relative h-44 overflow-hidden rounded-xl shadow-sm">
-					<img src={photo.src} alt={photo.caption} loading="lazy" class="h-full w-full object-cover" />
-					<figcaption class="absolute inset-0 flex items-end bg-linear-to-t from-primary/60 via-transparent to-transparent p-2.5 text-label-sm text-on-primary">
+				<figure class="group relative h-44 overflow-hidden rounded-xl shadow-sm md:h-64 lg:h-80">
+					<img src={photo.src} alt={photo.caption} loading="lazy" class="h-full w-full object-cover md:transition-transform md:duration-500 md:group-hover:scale-105" />
+					<figcaption class="absolute inset-0 flex items-end bg-linear-to-t from-primary/60 via-transparent to-transparent p-2.5 text-label-sm text-on-primary md:p-space-md md:text-label-lg">
 						{photo.caption}
 					</figcaption>
 				</figure>

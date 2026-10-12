@@ -1,21 +1,13 @@
 ---
 import Icon from './Icon.astro';
 import { site } from '../data/site';
-
-const links = [
-	{ href: '#inicio', icon: 'home', label: 'Inicio' },
-	{ href: '#sabores', icon: 'icecream', label: 'Sabores' },
-	{ href: '#cafe', icon: 'coffee', label: 'Café' },
-	{ href: '#carta', icon: 'menu_book', label: 'Carta' },
-	{ href: '#resenas', icon: 'reviews', label: 'Reseñas' },
-];
 ---
 
-<nav class="pb-safe fixed bottom-0 z-50 w-full bg-surface/90 shadow-[0_-4px_20px_rgba(43,27,23,0.08)] backdrop-blur-xl">
+<nav class="pb-safe md:hidden fixed bottom-0 z-50 w-full bg-surface/90 shadow-[0_-4px_20px_rgba(43,27,23,0.08)] backdrop-blur-xl">
 	<div class="flex items-center justify-between gap-space-xs px-margin py-space-xs">
 		<div class="flex flex-1 items-center justify-around">
 			{
-				links.map((link, i) => (
+				site.nav.map((link, i) => (
 					<a
 						href={link.href}
 						aria-current={i === 0 ? 'page' : undefined}

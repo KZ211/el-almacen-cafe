@@ -8,13 +8,14 @@ import MenuDownload from '../components/MenuDownload.astro';
 import Gallery from '../components/Gallery.astro';
 import Reviews from '../components/Reviews.astro';
 import Location from '../components/Location.astro';
+import Footer from '../components/Footer.astro';
 import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 import BottomNav from '../components/BottomNav.astro';
 ---
 
 <Layout>
 	<Header />
-	<main class="relative flex min-h-screen w-full flex-col bg-surface pt-16 pb-24">
+	<main class="relative flex min-h-screen w-full flex-col bg-surface pt-16 pb-24 md:pt-18 md:pb-0">
 		<Hero />
 		<StatusRibbon />
 		<Pillars />
@@ -23,6 +24,7 @@ import BottomNav from '../components/BottomNav.astro';
 		<Reviews />
 		<Location />
 	</main>
+	<Footer />
 	<FloatingWhatsApp />
 	<BottomNav />
 </Layout>

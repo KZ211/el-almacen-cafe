@@ -1,0 +1,82 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<!-- Solo desktop/tablet: en mobile el cierre lo da el BottomNav -->
+<footer class="hidden bg-primary-container text-on-primary md:block">
+	<div class="mx-auto grid max-w-6xl grid-cols-3 gap-space-xl px-8 py-16 lg:grid-cols-4">
+		<div class="col-span-3 flex flex-col gap-space-md lg:col-span-1">
+			<a href="#inicio" class="flex items-center gap-space-sm">
+				<img src={site.logo} alt={`Logo ${site.name}`} width="48" height="48" class="h-12 w-12 rounded-lg object-cover" loading="lazy" />
+				<div class="flex flex-col">
+					<span class="font-headline text-headline-md leading-none text-on-primary">{site.name}</span>
+					<span class="mt-1 text-label-sm tracking-widest text-secondary-fixed-dim uppercase">{site.tagline}</span>
+				</div>
+			</a>
+			<p class="max-w-xs text-body-sm text-on-primary-container">
+				Heladería artesanal italiana &amp; cafetería de especialidad en el corazón del barrio.
+			</p>
+		</div>
+
+		<nav aria-label="Secciones" class="flex flex-col gap-space-sm">
+			<span class="text-label-sm tracking-widest text-secondary-fixed uppercase">Secciones</span>
+			{
+				site.nav.map((link) => (
+					<a href={link.href} class="w-fit text-body-md text-surface-dim transition-colors hover:text-on-primary">
+						{link.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<div class="flex flex-col gap-space-sm">
+			<span class="text-label-sm tracking-widest text-secondary-fixed uppercase">Horarios</span>
+			<span class="text-body-sm text-on-primary-container">Lunes a Domingos</span>
+			{
+				site.hours.map((row) => (
+					<div class="flex flex-col">
+						<span class="text-body-sm text-on-primary-container">{row.label}</span>
+						<span class="text-label-lg text-surface-dim">{row.value}</span>
+					</div>
+				))
+			}
+		</div>
+
+		<div class="flex flex-col gap-space-sm">
+			<span class="text-label-sm tracking-widest text-secondary-fixed uppercase">Contacto</span>
+			<p class="flex items-start gap-space-xs text-body-sm text-surface-dim">
+				<Icon name="pin_drop" class="mt-px text-[18px] text-secondary-fixed-dim" />
+				<span>{site.address}</span>
+			</p>
+			<a
+				href={site.mapsUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex w-fit items-center gap-space-xs text-body-sm text-surface-dim transition-colors hover:text-on-primary"
+			>
+				<Icon name="directions" class="text-[18px] text-secondary-fixed-dim" />
+				<span>Cómo llegar</span>
+			</a>
+			<a
+				href={site.whatsappUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="mt-space-xs flex h-11 w-fit items-center gap-space-xs rounded-xl bg-whatsapp px-space-md text-label-md text-primary transition-all hover:brightness-105"
+			>
+				<Icon name="chat" class="text-[18px]" />
+				<span>Pedir por WhatsApp</span>
+			</a>
+		</div>
+	</div>
+
+	<div class="border-t border-on-primary/10">
+		<div class="mx-auto flex max-w-6xl items-center gap-space-sm px-8 py-space-md text-body-sm text-on-primary-container">
+			<span>© {year} {site.name} · {site.tagline}</span>
+			<span aria-hidden="true">·</span>
+			<span>{site.deliveryNote}</span>
+		</div>
+	</div>
+</footer>

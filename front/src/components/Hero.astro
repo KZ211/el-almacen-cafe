@@ -9,21 +9,21 @@ const badges = [
 ];
 ---
 
-<section id="inicio" class="relative w-full overflow-hidden bg-primary-container px-margin pt-space-lg pb-space-xl text-on-primary">
+<section id="inicio" class="relative w-full overflow-hidden bg-primary-container px-margin pt-space-lg pb-space-xl text-on-primary md:py-20 lg:py-24">
 	<!-- Círculos decorativos -->
-	<div class="pointer-events-none absolute -top-12 -right-12 h-48 w-48 rounded-full bg-secondary/15 blur-2xl"></div>
-	<div class="pointer-events-none absolute -bottom-16 -left-12 h-56 w-56 rounded-full bg-secondary-container/10 blur-3xl"></div>
+	<div class="pointer-events-none absolute -top-12 -right-12 h-48 w-48 rounded-full bg-secondary/15 blur-2xl md:h-96 md:w-96 md:blur-3xl"></div>
+	<div class="pointer-events-none absolute -bottom-16 -left-12 h-56 w-56 rounded-full bg-secondary-container/10 blur-3xl md:h-112 md:w-md"></div>
 
-	<div class="relative z-10 flex flex-col items-center text-center">
+	<div class="relative z-10 flex flex-col items-center text-center md:mx-auto md:max-w-3xl">
 		<div class="mb-space-md inline-flex items-center gap-space-xs rounded-full bg-surface-container/10 px-space-md py-1 shadow-sm backdrop-blur-md">
 			<Icon name="stars" class="text-[16px] text-secondary-fixed" />
 			<span class="text-label-sm tracking-widest text-secondary-fixed uppercase">Receta Tradicional Italiana</span>
 		</div>
 
 		<!-- Medallón inspirado en el cartel -->
-		<div class="mb-space-md flex w-full max-w-xs flex-col items-center rounded-2xl bg-primary/40 px-space-md py-space-sm shadow-inner">
+		<div class="mb-space-md flex w-full max-w-xs flex-col items-center rounded-2xl bg-primary/40 px-space-md py-space-sm shadow-inner md:mb-space-lg md:max-w-md md:px-space-xl md:py-space-md">
 			<span class="text-label-sm tracking-widest text-secondary-fixed uppercase">Auténtico Desde el Primer Día</span>
-			<h1 class="mt-1 font-headline text-headline-xl-mobile font-normal tracking-tight text-on-primary">{site.name}</h1>
+			<h1 class="mt-1 font-headline text-headline-xl-mobile font-normal tracking-tight text-on-primary md:text-headline-xl lg:text-[56px] lg:leading-[64px]">{site.name}</h1>
 			<div class="my-1 flex w-3/4 items-center justify-center gap-space-sm opacity-80">
 				<div class="h-px flex-1 bg-secondary-fixed/40"></div>
 				<span class="text-label-md tracking-widest text-secondary-fixed-dim uppercase">{site.tagline}</span>
@@ -31,11 +31,11 @@ const badges = [
 			</div>
 		</div>
 
-		<p class="mb-space-lg max-w-sm text-body-md text-on-primary-container">
+		<p class="mb-space-lg max-w-sm text-body-md text-on-primary-container md:max-w-xl md:text-body-lg">
 			Heladería artesanal italiana &amp; cafetería de especialidad en el corazón del barrio. Ingredientes puros y pasión en cada servida.
 		</p>
 
-		<div class="mb-space-lg flex w-full items-center justify-around rounded-xl bg-surface-container/5 px-space-sm py-2 text-center">
+		<div class="mb-space-lg flex w-full items-center justify-around rounded-xl bg-surface-container/5 px-space-sm py-2 text-center md:max-w-xl md:py-space-sm">
 			{
 				badges.map((badge, i) => (
 					<>
@@ -49,19 +49,19 @@ const badges = [
 			}
 		</div>
 
-		<div class="flex w-full flex-col gap-space-sm">
+		<div class="flex w-full flex-col gap-space-sm md:w-auto md:flex-row">
 			<a
 				href={site.whatsappUrl}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="flex h-13 w-full items-center justify-center gap-space-sm rounded-xl bg-whatsapp px-space-lg py-3 text-label-lg text-primary shadow-[0_4px_16px_rgba(37,211,102,0.3)] transition-all hover:brightness-105 active:scale-[0.99]"
+				class="flex h-13 w-full items-center md:w-auto justify-center gap-space-sm rounded-xl bg-whatsapp px-space-lg py-3 text-label-lg text-primary shadow-[0_4px_16px_rgba(37,211,102,0.3)] transition-all hover:brightness-105 active:scale-[0.99]"
 			>
 				<Icon name="chat" class="text-[22px]" />
 				<span>Escribir por WhatsApp</span>
 			</a>
 			<a
 				href="#carta"
-				class="flex h-12 w-full items-center justify-center gap-space-sm rounded-xl bg-surface-container-high/20 px-space-lg py-2.5 text-label-md text-surface-bright backdrop-blur-sm transition-colors hover:bg-surface-container-high/30"
+				class="flex h-12 w-full items-center justify-center gap-space-sm rounded-xl bg-surface-container-high/20 md:h-13 md:w-auto px-space-lg py-2.5 text-label-md text-surface-bright backdrop-blur-sm transition-colors hover:bg-surface-container-high/30"
 			>
 				<Icon name="file_download" class="text-[20px] text-secondary-fixed" />
 				<span>Descargar Carta Completa (PDF)</span>

@@ -19,8 +19,8 @@ const reviews = [
 ];
 ---
 
-<section id="resenas" class="flex flex-col gap-space-md px-margin pb-space-xl">
-	<div class="flex items-center justify-between rounded-2xl bg-surface-container p-space-md shadow-sm">
+<section id="resenas" class="flex flex-col gap-space-md px-margin pb-space-xl md:mx-auto md:w-full md:max-w-6xl md:px-8 md:pb-16 lg:grid lg:grid-cols-3 lg:items-start lg:gap-space-lg">
+	<div class="flex items-center justify-between rounded-2xl bg-surface-container p-space-md shadow-sm md:p-space-lg lg:sticky lg:top-24">
 		<div class="flex items-center gap-space-sm">
 			<div class="flex h-12 w-12 flex-col items-center justify-center rounded-xl bg-primary text-on-primary">
 				<span class="font-headline text-headline-md leading-none font-bold">4.9</span>
@@ -36,10 +36,10 @@ const reviews = [
 		</div>
 	</div>
 
-	<div class="flex flex-col gap-space-sm">
+	<div class="flex flex-col gap-space-sm md:grid md:grid-cols-2 md:gap-space-md lg:col-span-2">
 		{
 			reviews.map((review) => (
-				<article class="flex flex-col gap-space-xs rounded-xl bg-surface-container-low p-space-md shadow-sm">
+				<article class="flex flex-col gap-space-xs rounded-xl bg-surface-container-low p-space-md shadow-sm md:p-space-lg">
 					<div class="flex items-center justify-between">
 						<div class="flex items-center gap-2">
 							<div class:list={['flex h-8 w-8 items-center justify-center rounded-full text-label-md font-bold', review.avatarClass]}>
