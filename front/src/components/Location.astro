@@ -1,0 +1,72 @@
+---
+import Icon from './Icon.astro';
+import SectionTitle from './SectionTitle.astro';
+import { site } from '../data/site';
+---
+
+<section id="info-local" class="flex flex-col gap-space-md px-margin pb-space-xl">
+	<SectionTitle eyebrow="Visitanos o Pedí Delivery" title="Encontranos en el local" />
+
+	<div class="flex flex-col gap-space-sm rounded-2xl bg-surface-container p-space-md shadow-sm">
+		<div class="flex items-center gap-space-sm">
+			<Icon name="schedule" class="text-[22px] text-secondary" />
+			<div class="flex flex-col">
+				<span class="text-label-md font-bold text-primary">Horarios de Atención</span>
+				<span class="text-body-sm text-on-surface-variant">Lunes a Domingos • Abierto todos los días</span>
+			</div>
+		</div>
+		{
+			site.hours.map((row) => (
+				<div class="flex items-center justify-between rounded-xl bg-surface-container-high p-space-sm text-on-surface">
+					<span class="text-body-md">{row.label}</span>
+					<span class="text-label-md font-bold">{row.value}</span>
+				</div>
+			))
+		}
+	</div>
+
+	<div class="flex flex-col gap-space-sm rounded-2xl bg-surface-container p-space-md shadow-sm">
+		<div class="flex items-start gap-space-sm">
+			<Icon name="pin_drop" class="mt-0.5 shrink-0 text-[22px] text-secondary" />
+			<div class="flex min-w-0 flex-col">
+				<span class="text-label-md font-bold text-primary">Ubicación &amp; Zona de Envíos</span>
+				<p class="mt-0.5 text-body-sm text-on-surface-variant">{site.address} {site.deliveryNote}</p>
+			</div>
+		</div>
+
+		<!-- Placeholder del mapa: reemplazar por un embed de Google Maps -->
+		<a
+			href={site.mapsUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="relative flex h-44 w-full items-end overflow-hidden rounded-xl bg-surface-container-highest p-2.5 shadow-inner"
+		>
+			<Icon name="map" class="absolute inset-0 m-auto h-fit w-fit text-[48px] text-outline-variant" />
+			<div class="relative flex items-center gap-1 rounded-lg bg-surface/90 px-space-sm py-1 text-label-sm text-on-surface shadow-sm backdrop-blur-md">
+				<Icon name="location_on" class="text-[16px] text-error" />
+				<span>Ver en Google Maps</span>
+			</div>
+		</a>
+
+		<div class="grid grid-cols-2 gap-space-xs pt-1">
+			<a
+				href={site.mapsUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex h-11 items-center justify-center gap-1 rounded-xl bg-surface-container-high px-space-sm text-label-md text-primary transition-colors hover:bg-surface-container-highest"
+			>
+				<Icon name="directions" class="text-[18px]" />
+				<span>Cómo Llegar</span>
+			</a>
+			<a
+				href={site.whatsappUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex h-11 items-center justify-center gap-1 rounded-xl bg-primary px-space-sm text-label-md text-on-primary transition-colors"
+			>
+				<Icon name="chat" class="text-[18px]" />
+				<span>Pedir Envío</span>
+			</a>
+		</div>
+	</div>
+</section>

@@ -3,21 +3,38 @@ import '../styles/global.css';
 
 interface Props {
 	title?: string;
+	description?: string;
 }
 
-const { title = 'El Almacén Café' } = Astro.props;
+const {
+	title = 'El Almacén · Helados & Café',
+	description = 'Heladería artesanal italiana & cafetería de especialidad en el corazón del barrio.',
+} = Astro.props;
 ---
 
-<html lang="es">
+<html lang="es" data-theme="almacen">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/jpeg" href="/logo-el-almacen.jpg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#2b1b17" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
+		/>
 		<title>{title}</title>
 	</head>
-	<body class="min-h-screen bg-base-100 text-base-content">
+	<body
+		class="flex min-h-screen flex-col bg-surface font-body text-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container"
+	>
 		<slot />
 	</body>
 </html>

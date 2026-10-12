@@ -1,0 +1,44 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+
+const links = [
+	{ href: '#inicio', icon: 'home', label: 'Inicio' },
+	{ href: '#sabores', icon: 'icecream', label: 'Sabores' },
+	{ href: '#cafe', icon: 'coffee', label: 'Café' },
+	{ href: '#carta', icon: 'menu_book', label: 'Carta' },
+	{ href: '#resenas', icon: 'reviews', label: 'Reseñas' },
+];
+---
+
+<nav class="pb-safe fixed bottom-0 z-50 w-full bg-surface/90 shadow-[0_-4px_20px_rgba(43,27,23,0.08)] backdrop-blur-xl">
+	<div class="flex items-center justify-between gap-space-xs px-margin py-space-xs">
+		<div class="flex flex-1 items-center justify-around">
+			{
+				links.map((link, i) => (
+					<a
+						href={link.href}
+						aria-current={i === 0 ? 'page' : undefined}
+						class:list={[
+							'flex h-12 min-w-11 flex-col items-center justify-center transition-colors',
+							i === 0 ? 'font-semibold text-secondary' : 'text-on-surface-variant hover:text-on-surface',
+						]}
+					>
+						<Icon name={link.icon} class="text-[20px]" />
+						<span class="mt-0.5 text-label-sm">{link.label}</span>
+					</a>
+				))
+			}
+		</div>
+		<a
+			href={site.whatsappUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Pedir por WhatsApp"
+			class="flex h-11 shrink-0 items-center justify-center gap-space-xs rounded-lg bg-primary px-space-sm text-label-md tracking-wider text-on-primary uppercase shadow-[0_4px_12px_rgba(14,4,2,0.2)] transition-colors hover:bg-primary-container"
+		>
+			<Icon name="chat" class="text-[18px]" />
+			<span>Pedir</span>
+		</a>
+	</div>
+</nav>

@@ -1,0 +1,15 @@
+---
+interface Props {
+	eyebrow: string;
+	title: string;
+	centered?: boolean;
+}
+
+const { eyebrow, title, centered = false } = Astro.props;
+---
+
+<div class:list={['flex flex-col', centered && 'items-center text-center']}>
+	<span class="text-label-sm tracking-widest text-secondary uppercase">{eyebrow}</span>
+	<h2 class="mt-0.5 font-headline text-headline-lg-mobile text-primary">{title}</h2>
+	{centered && <div class="mt-2 h-0.5 w-12 rounded-full bg-secondary-container" />}
+</div>

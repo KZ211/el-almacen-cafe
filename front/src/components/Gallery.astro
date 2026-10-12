@@ -1,0 +1,42 @@
+---
+import SectionTitle from './SectionTitle.astro';
+
+const photos = [
+	{
+		caption: 'Cucuruchos de masa crujiente',
+		src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBcBuYX-mmaVDiYGidKtpOEAvK3iF_Pq7jVQvE7-tibMSAaAehCRIjlUHKmDh0Ks5KRpIJA153tRap1ZRqMKkrcHdWU8uJcvKk4Ouz2TF5QZWmA15sPxe84K-kC5LH3lkqWrrq0ycx-xfnJ-SQExjC5IL8m-RkKsUUue17DIgtxinLUr-u0IJMnxo4updKx14Vjz5CsEeLduQRGoOLG0_lJU43yQHmYkfUOZMcYl0wyMTCbvOri1aAYKg',
+	},
+	{
+		caption: 'El rincón de barrio',
+		src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0Rl5wHjCgqoR4eRg8Dnh1U6P-2MJYw7y08qAkh041IMjpLkJWA4wktluFmRQE8BOK2bZBxQsywso-X5H-UqcHz62S2yViYx2Jr3NghHJ_0LmX6-hJaGzBrr74h8GhEqSOv60pO1PuaU6ighjnTClRB_HUD4JlqSg1Q8SanOLH65DN8sU16VbJeNkuwmHAQ0mEpF57eLBia7YZhbKohM5aGXbF8w8pUHXRUx0Bqx_R5m4e26fkQZFYrA',
+	},
+	{
+		caption: 'Pastelería fresca del día',
+		src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBba3WxDh10tUkys0s35mpLUzj4Z_7mi-2eRFDNtG1DK-291UJ1N4Lm8zyK1boBvOgewgonCHtfvnKNom6jcSti_HqaMCA6XIHlAld8-IJg-AlaZjHtniqEnoleRthRgh8eVE7pYelN_Npdaf1WipG08zcM8gbabtL49gi45nhjSGTwj4EkBEZ5MG1Cl7dxeaMucNWxKRL0bbNKvnoVfu5rjqUTKOpQ2krM-Buu-O3r9fL3vaPUqz9Psg',
+	},
+	{
+		caption: 'Copas & Creaciones',
+		src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0VNnafTrxtlYDnaOaxbfo8Igb4pPEB5H2S72TRwx14rUbnygIjGMfl13MlklaJIfW99bKe8a3GenDFn_NMwHj6uI3N-UbSDFzUM8fj1BR3dMnMZcj0Qa9Jtfiq-jr0C46GPjG-i3Z455GsF3xEHNSP032tswa_wZDV506Vny1LAYawYjKt9J6DAxhOC_IxYS_tWHydNMqPwljMyyxmoeuGrjrIc3HE1S6ng64xQ4UppPgAOdXaVlNDg',
+	},
+];
+---
+
+<section class="flex flex-col gap-space-md px-margin pb-space-xl">
+	<div class="flex items-end justify-between">
+		<SectionTitle eyebrow="Momentos Almacén" title="La Experiencia" />
+		<span class="text-label-sm text-on-surface-variant">#ElAlmacenCafe</span>
+	</div>
+
+	<div class="grid grid-cols-2 gap-space-sm">
+		{
+			photos.map((photo) => (
+				<figure class="relative h-44 overflow-hidden rounded-xl shadow-sm">
+					<img src={photo.src} alt={photo.caption} loading="lazy" class="h-full w-full object-cover" />
+					<figcaption class="absolute inset-0 flex items-end bg-linear-to-t from-primary/60 via-transparent to-transparent p-2.5 text-label-sm text-on-primary">
+						{photo.caption}
+					</figcaption>
+				</figure>
+			))
+		}
+	</div>
+</section>
