@@ -1,0 +1,60 @@
+---
+import Icon from './Icon.astro';
+
+const reviews = [
+	{
+		initials: 'MC',
+		name: 'Martín C.',
+		date: 'Hace 3 días',
+		avatarClass: 'bg-secondary-container text-on-secondary-container',
+		text: 'El mejor dulce de leche granizado de la ciudad sin dudarlo. El chocolate tiene un crocante perfecto y la textura es súper cremosa. Además el café flat white es de nivel internacional.',
+	},
+	{
+		initials: 'VR',
+		name: 'Valentina R.',
+		date: 'Hace 1 semana',
+		avatarClass: 'bg-secondary text-on-secondary',
+		text: 'El pistacho siciliano es una locura total, se nota la calidad real de los frutos secos y que no usan esencias artificiales. La atención de los chicos siempre cálida.',
+	},
+];
+---
+
+<section id="resenas" class="flex flex-col gap-space-md px-margin pb-space-xl">
+	<div class="flex items-center justify-between rounded-2xl bg-surface-container p-space-md shadow-sm">
+		<div class="flex items-center gap-space-sm">
+			<div class="flex h-12 w-12 flex-col items-center justify-center rounded-xl bg-primary text-on-primary">
+				<span class="font-headline text-headline-md leading-none font-bold">4.9</span>
+				<span class="text-label-sm text-secondary-fixed" aria-label="5 estrellas">★★★★★</span>
+			</div>
+			<div class="flex flex-col">
+				<span class="text-label-md font-bold text-primary">Excelente en Google</span>
+				<span class="text-body-sm text-on-surface-variant">+480 opiniones de la comunidad</span>
+			</div>
+		</div>
+		<div class="flex h-9 w-9 items-center justify-center rounded-full bg-surface-container-high text-secondary">
+			<Icon name="rate_review" class="text-[20px]" />
+		</div>
+	</div>
+
+	<div class="flex flex-col gap-space-sm">
+		{
+			reviews.map((review) => (
+				<article class="flex flex-col gap-space-xs rounded-xl bg-surface-container-low p-space-md shadow-sm">
+					<div class="flex items-center justify-between">
+						<div class="flex items-center gap-2">
+							<div class:list={['flex h-8 w-8 items-center justify-center rounded-full text-label-md font-bold', review.avatarClass]}>
+								{review.initials}
+							</div>
+							<div class="flex flex-col">
+								<span class="text-label-md text-on-surface">{review.name}</span>
+								<span class="text-label-sm text-on-surface-variant">{review.date}</span>
+							</div>
+						</div>
+						<div class="text-sm text-secondary" aria-label="5 estrellas">★★★★★</div>
+					</div>
+					<p class="mt-1 text-body-md text-on-surface">"{review.text}"</p>
+				</article>
+			))
+		}
+	</div>
+</section>

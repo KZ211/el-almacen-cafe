@@ -1,0 +1,12 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+
+<div class="flex w-full items-center justify-between bg-secondary-container px-margin py-2.5 text-on-secondary-container">
+	<div class="flex items-center gap-space-xs">
+		<Icon name="verified" class="text-[18px]" />
+		<span class="text-label-sm font-semibold">Abierto hoy hasta las {site.closingToday}</span>
+	</div>
+	<a href="#info-local" class="text-label-sm font-bold tracking-wide uppercase underline">Cómo llegar</a>
+</div>

@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+
+<header
+	class="pt-safe fixed top-0 z-50 w-full bg-surface/85 shadow-[0_1px_12px_rgba(43,27,23,0.06)] backdrop-blur-xl"
+>
+	<div class="flex h-16 items-center justify-between gap-space-sm px-margin">
+		<a href="#inicio" class="flex min-w-0 items-center gap-space-sm">
+			<img src={site.logo} alt={`Logo ${site.name}`} width="32" height="32" class="h-8 w-8 shrink-0 rounded-md object-cover" />
+			<div class="flex min-w-0 flex-col">
+				<span class="truncate font-headline text-headline-md leading-none tracking-tight text-primary">{site.name}</span>
+				<span class="mt-0.5 truncate text-label-sm tracking-widest text-secondary uppercase">Inicio</span>
+			</div>
+		</a>
+		<div class="flex shrink-0 items-center gap-space-xs">
+			<button
+				type="button"
+				aria-label="Buscar en la carta"
+				class="flex h-11 w-11 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container active:bg-surface-container-high"
+			>
+				<Icon name="search" class="text-[22px]" />
+			</button>
+			<div
+				class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_2px_8px_rgba(14,4,2,0.15)]"
+			>
+				<Icon name="person" class="text-[18px] text-on-primary" />
+			</div>
+		</div>
+	</div>
+</header>

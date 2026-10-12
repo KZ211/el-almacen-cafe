@@ -1,0 +1,73 @@
+---
+import Icon from './Icon.astro';
+
+const categories = [
+	{ icon: 'icecream', title: 'Helados & Kilos', subtitle: '+32 gustos' },
+	{ icon: 'local_cafe', title: 'Cafetería & Té', subtitle: 'Especialidad' },
+	{ icon: 'bakery_dining', title: 'Viennoiserie', subtitle: 'Masa madre' },
+	{ icon: 'cake', title: 'Postres Helados', subtitle: 'Tartas & Copas' },
+];
+---
+
+<section id="carta" class="px-margin pb-space-xl">
+	<div class="relative flex flex-col overflow-hidden rounded-2xl bg-surface-container-low p-space-lg shadow-sm">
+		<div class="flex items-start justify-between gap-space-sm">
+			<div>
+				<span class="text-label-sm tracking-wider text-secondary uppercase">Nuestra Carta Completa</span>
+				<h3 class="mt-1 font-headline text-headline-lg-mobile text-primary">Descubrí todos los sabores</h3>
+			</div>
+			<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary-container text-on-secondary-container">
+				<Icon name="menu_book" class="text-[26px]" />
+			</div>
+		</div>
+		<p class="mt-space-sm mb-space-md text-body-md text-on-surface-variant">
+			Carta digital actualizada: formatos por kilo, vasitos de 1 a 3 gustos, brunch salado, tortas del día y opciones aptas celíacos.
+		</p>
+
+		<div class="mb-space-md grid grid-cols-2 gap-space-xs">
+			{
+				categories.map((category) => (
+					<div class="flex items-center gap-2 rounded-xl bg-surface-container p-space-sm">
+						<Icon name={category.icon} class="text-[20px] text-secondary" />
+						<div class="min-w-0">
+							<div class="truncate text-label-sm text-on-surface">{category.title}</div>
+							<div class="text-body-sm text-on-surface-variant">{category.subtitle}</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+
+		<div class="flex flex-col gap-space-xs">
+			<button
+				type="button"
+				id="downloadPdfBtn"
+				class="flex h-12 w-full items-center justify-center gap-space-xs rounded-xl bg-primary px-space-md py-2.5 text-label-md tracking-wider text-on-primary uppercase shadow-md transition-transform active:scale-[0.98]"
+			>
+				<Icon name="download" class="text-[18px]" />
+				<span>Descargar Carta Completa (PDF)</span>
+			</button>
+			<button
+				type="button"
+				class="flex h-11 w-full items-center justify-center gap-space-xs rounded-xl bg-surface-container px-space-md py-2 text-label-md text-primary transition-colors hover:bg-surface-container-high"
+			>
+				<Icon name="open_in_new" class="text-[18px]" />
+				<span>Ver Carta en Línea</span>
+			</button>
+		</div>
+
+		<div id="pdfFeedback" role="status" class="mt-2 hidden rounded-lg bg-surface-container-highest p-2 text-center text-body-sm text-on-surface">
+			¡Carta descargada con éxito! Disfrutá la selección de temporada.
+		</div>
+	</div>
+</section>
+
+<script>
+	// TODO: enlazar al PDF real de la carta
+	document.getElementById('downloadPdfBtn')?.addEventListener('click', () => {
+		const feedback = document.getElementById('pdfFeedback');
+		if (!feedback) return;
+		feedback.classList.remove('hidden');
+		setTimeout(() => feedback.classList.add('hidden'), 4000);
+	});
+</script>
