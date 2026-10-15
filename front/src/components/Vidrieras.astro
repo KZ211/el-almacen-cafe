@@ -1,0 +1,53 @@
+---
+import Icon from './Icon.astro';
+import { panes, site, whatsappLink } from '../data/site';
+---
+
+<!-- Las dos vidrieras del frente: helados y café con el mismo peso -->
+<section class="revoque relative px-4 pt-20 pb-24 md:px-8 md:pt-28 md:pb-32" aria-labelledby="vidrieras-titulo">
+	<h2 id="vidrieras-titulo" class="sr-only">Helados y café</h2>
+	<div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:gap-10">
+		{
+			panes.map((pane) => (
+				<article id={pane.id} class="vidriera flex flex-col bg-muro-hondo p-2.5 md:p-3">
+					<div class="vidrio relative flex flex-1 flex-col overflow-hidden px-6 pt-10 pb-7 md:px-10 md:pt-14 md:pb-10">
+						<h3 class="letra-vidriera relative text-[clamp(2.6rem,10.5vw,4.4rem)] leading-[0.9] tracking-[0.02em] text-pino-claro">{pane.title.toUpperCase()}</h3>
+						<p class="relative mt-5 max-w-[30ch] text-[1.05rem] leading-relaxed text-cartel/85">{pane.lead}</p>
+						<ul class="relative mt-8 flex flex-wrap gap-x-5 gap-y-2" aria-label={`Formatos de ${pane.title.toLowerCase()}`}>
+							{pane.items.map((item) => (
+								<li class="rotulo text-[0.85rem] text-pino-claro">{item}</li>
+							))}
+						</ul>
+						<a
+							href={whatsappLink(`¡Hola! Quiero pedir ${pane.title.toLowerCase()}.`)}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="rotulo relative mt-10 flex w-fit items-center gap-2 border-b-2 border-cordon pb-1 text-[0.95rem] text-cordon transition-colors hover:border-cartel hover:text-cartel"
+						>
+							Pedí {pane.title.toLowerCase()} por WhatsApp
+							<Icon name="flecha" class="size-4" />
+						</a>
+					</div>
+				</article>
+			))
+		}
+	</div>
+	{!site.contentConfirmed && <p class="rotulo mx-auto mt-6 max-w-6xl text-[0.75rem] text-cartel/75">Formatos de ejemplo · a confirmar</p>}
+</section>
+
+<style>
+	/* La vidriera está metida en el muro: el vano tiene sombra hacia adentro */
+	.vidriera {
+		box-shadow:
+			inset 0 10px 14px -6px rgb(20 4 3 / 0.75),
+			inset 0 -2px 0 rgb(255 255 255 / 0.06);
+	}
+	.vidrio {
+		background-color: var(--color-vidrio);
+		box-shadow: inset 0 0 0 4px var(--color-hierro);
+	}
+	/* Letra pintada a pan de oro sobre el vidrio */
+	.letra-vidriera {
+		text-shadow: 0 1px 0 var(--color-pino-hondo);
+	}
+</style>

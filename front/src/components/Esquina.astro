@@ -1,0 +1,229 @@
+---
+import Icon from './Icon.astro';
+import { site, whatsappLink } from '../data/site';
+
+const closesLabel = site.hours.closes === '24:00' ? '00:00' : site.hours.closes;
+const hoursConfirmed = site.hours.confirmed;
+---
+
+<section id="inicio" class="esquina revoque relative isolate overflow-hidden">
+	<!-- Sombra de la pérgola: el ángulo sigue la hora real (ver script) -->
+	<div class="sombras sombra-pergola pointer-events-none absolute -inset-x-[20%] -top-[10%] -bottom-[10%] z-0" aria-hidden="true"></div>
+
+	<div
+		class="relative z-10 mx-auto flex min-h-[calc(100svh-3.75rem-env(safe-area-inset-bottom))] max-w-6xl flex-col justify-center px-4 pt-[calc(7rem+env(safe-area-inset-top))] pb-24 md:min-h-[100svh] md:px-8 md:pt-36 md:pb-36"
+	>
+		<!-- El cartel del frente -->
+		<div class="cartel relative isolate mx-auto w-full max-w-[34rem] overflow-hidden bg-cartel px-6 pt-6 pb-7 text-tinta md:px-10 md:pt-8 md:pb-9">
+			<div class="sombras sombra-pergola pointer-events-none absolute -inset-[40%] -z-10" aria-hidden="true"></div>
+			<h1 class="flex flex-col items-center text-center leading-none">
+				<span class="flex w-full items-center justify-center gap-3" aria-hidden="true">
+					<span class="filete h-px flex-1"></span>
+					<span class="text-[clamp(2.2rem,8vw,3.2rem)] tracking-[0.04em]">EL</span>
+					<span class="filete filete--der h-px flex-1"></span>
+				</span>
+				<span class="sr-only">El Almacén, Helados &amp; Café</span>
+				<span class="rotulo mt-1 text-[0.8rem] tracking-[0.32em] text-tinta-suave md:text-[0.9rem]" aria-hidden="true">Helados &amp; Café</span>
+				<span class="mt-3 text-[clamp(2.6rem,12.5vw,5.4rem)] tracking-[0.02em]" aria-hidden="true">ALMACÉN</span>
+			</h1>
+		</div>
+
+		<div class="mt-12 grid gap-10 md:mt-16 md:grid-cols-[1.15fr_1fr] md:items-end md:gap-16">
+			<p class="font-cartel text-[clamp(2.1rem,7.5vw,3.75rem)] leading-[1.02] text-cartel">
+				Helados y café,<br />en la esquina.
+			</p>
+
+			<div class="flex flex-col gap-6">
+				<p
+					class="estado rotulo flex items-center gap-3 text-[0.85rem] text-cartel"
+					data-confirmed={hoursConfirmed ? 'true' : 'false'}
+					data-opens={site.hours.opens}
+					data-closes={site.hours.closes}
+				>
+					<span class="estado-luz size-2.5 rounded-full bg-cordon" aria-hidden="true"></span>
+					<span class="estado-texto">{hoursConfirmed ? `${site.hours.days} · ${site.hours.opens} a ${closesLabel}` : 'Horario a confirmar'}</span>
+				</p>
+
+				<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+					<a
+						href={whatsappLink('¡Hola! Quiero hacer un pedido.')}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="placa group flex items-center justify-between gap-6 bg-cordon px-5 py-4 text-tinta"
+					>
+						<span class="flex items-center gap-3">
+							<Icon name="chat" class="size-6" />
+							<span class="rotulo text-[1.05rem]">Pedí por WhatsApp</span>
+						</span>
+						<Icon name="flecha" class="size-5 transition-transform duration-300 ease-salida group-hover:translate-x-1" />
+					</a>
+					<a
+						href={site.mapsUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rotulo flex items-center gap-2 self-start px-1 py-2 text-[0.9rem] text-cartel underline decoration-cartel/40 decoration-2 underline-offset-[6px] transition-colors hover:decoration-cordon sm:self-auto"
+					>
+						<Icon name="ruta" class="size-5" />
+						Cómo llegar
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Cordón amarillo y vereda -->
+	<div class="vereda absolute inset-x-0 bottom-0 z-[5] h-16 md:h-20" aria-hidden="true"></div>
+</section>
+
+<style>
+	.cartel {
+		box-shadow:
+			0 1px 0 var(--color-cartel-sombra) inset,
+			0 18px 30px -12px rgb(30 6 4 / 0.55),
+			0 4px 8px -2px rgb(30 6 4 / 0.35);
+		transition: box-shadow 1.2s var(--ease-salida);
+	}
+	.filete {
+		background: linear-gradient(90deg, transparent, var(--color-tinta) 30%);
+		position: relative;
+	}
+	.filete--der {
+		background: linear-gradient(270deg, transparent, var(--color-tinta) 30%);
+	}
+	.filete::after {
+		content: '';
+		position: absolute;
+		top: -3px;
+		right: 0;
+		width: 7px;
+		height: 7px;
+		background: var(--color-tinta);
+		transform: rotate(45deg);
+	}
+	.filete--der::after {
+		right: auto;
+		left: 0;
+	}
+
+	.placa {
+		box-shadow: 0 10px 20px -10px rgb(30 6 4 / 0.7);
+		transition:
+			background-color 0.25s,
+			box-shadow 0.25s,
+			transform 0.25s var(--ease-salida);
+	}
+	.placa:hover {
+		background: var(--color-pino-claro);
+		box-shadow: 0 14px 24px -12px rgb(30 6 4 / 0.75);
+	}
+	.placa:active {
+		transform: translateY(1px);
+	}
+
+	.sombras {
+		opacity: 1;
+		filter: blur(2px);
+		transform: translate3d(0, var(--deriva, 0px), 0);
+		transition:
+			opacity 1.6s var(--ease-salida),
+			filter 1.6s var(--ease-salida);
+	}
+	/* Entrada: la sombra se asienta, de difusa a nítida */
+	.esquina:not(.asentada) .sombras {
+		filter: blur(10px);
+		opacity: 0.4;
+	}
+
+	/* De noche no hay sombra: el cartel se ilumina */
+	.esquina.noche .sombras {
+		opacity: 0;
+	}
+	.esquina.noche {
+		background-color: var(--color-muro-hondo);
+	}
+	.esquina.noche .cartel {
+		box-shadow:
+			0 0 0 1px rgb(255 236 200 / 0.4),
+			0 0 70px 6px rgb(255 214 150 / 0.28),
+			0 18px 30px -12px rgb(0 0 0 / 0.6);
+	}
+
+	.estado-luz {
+		box-shadow: 0 0 0 4px rgb(235 189 52 / 0.25);
+	}
+	.esquina.cerrado .estado-luz {
+		background: var(--color-maceta);
+		box-shadow: 0 0 0 4px rgb(219 140 130 / 0.25);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.sombras,
+		.cartel {
+			transition: none;
+		}
+		.esquina:not(.asentada) .sombras {
+			filter: blur(2px);
+			opacity: 1;
+		}
+	}
+</style>
+
+<script>
+	const toMinutes = (hhmm: string) => {
+		const [h, m] = hhmm.split(':').map(Number);
+		return h * 60 + m;
+	};
+
+	const esquina = document.querySelector<HTMLElement>('.esquina');
+	const estado = document.querySelector<HTMLElement>('.estado');
+
+	if (esquina && estado) {
+		const now = new Date();
+		const minutes = now.getHours() * 60 + now.getMinutes();
+
+		// Sol: de las 7 a las 20 la sombra barre de un lado al otro; fuera de eso, noche.
+		const sunrise = 7 * 60;
+		const sunset = 20 * 60;
+		if (minutes < sunrise || minutes >= sunset) {
+			esquina.classList.add('noche');
+		} else {
+			const t = (minutes - sunrise) / (sunset - sunrise);
+			esquina.style.setProperty('--angulo-sol', `${58 + t * 64}deg`);
+		}
+
+		// Abierto / cerrado según el horario cargado en site.ts (solo si está confirmado)
+		const confirmed = estado.dataset.confirmed === 'true';
+		const opens = toMinutes(estado.dataset.opens ?? '10:00');
+		const closes = toMinutes(estado.dataset.closes ?? '24:00');
+		const isOpen = minutes >= opens && minutes < closes;
+		const closesLabel = estado.dataset.closes === '24:00' ? '00:00' : estado.dataset.closes;
+		const texto = estado.querySelector('.estado-texto');
+		if (texto && confirmed) {
+			texto.textContent = isOpen
+				? `Abierto ahora · cierra a las ${closesLabel}`
+				: `Cerrado ahora · abre a las ${estado.dataset.opens}`;
+		}
+		if (confirmed && !isOpen) esquina.classList.add('cerrado');
+
+		requestAnimationFrame(() => requestAnimationFrame(() => esquina.classList.add('asentada')));
+
+		// La sombra se corre apenas con el scroll, como si caminaras bajo la pérgola
+		const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (!reduce) {
+			let ticking = false;
+			window.addEventListener(
+				'scroll',
+				() => {
+					if (ticking) return;
+					ticking = true;
+					requestAnimationFrame(() => {
+						const y = Math.min(window.scrollY, window.innerHeight);
+						esquina.style.setProperty('--deriva', `${y * 0.18}px`);
+						ticking = false;
+					});
+				},
+				{ passive: true },
+			);
+		}
+	}
+</script>

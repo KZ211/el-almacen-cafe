@@ -5,28 +5,46 @@ import { site } from '../data/site';
 ---
 
 <!-- Un solo contenedor fijo para la barra y el botón flotante, así no se desfasan al hacer scroll en mobile -->
-<div class="pointer-events-none fixed inset-x-0 bottom-0 z-50">
+<div class="pointer-events-none fixed inset-x-0 bottom-0 z-50 md:hidden">
 	<FloatingWhatsApp />
-	<nav
-		aria-label="Principal"
-		class="pb-safe pointer-events-auto bg-surface/90 shadow-[0_-4px_20px_rgba(43,27,23,0.08)] backdrop-blur-xl md:hidden"
-	>
-		<div class="flex items-center justify-around px-margin py-space-xs">
+	<nav aria-label="Secciones" class="pb-safe pointer-events-auto bg-hierro">
+		<ul class="flex items-stretch justify-around px-1">
 			{
-				site.nav.map((link, i) => (
-					<a
-						href={link.href}
-						aria-current={i === 0 ? 'page' : undefined}
-						class:list={[
-							'flex h-12 min-w-11 flex-col items-center justify-center transition-colors',
-							i === 0 ? 'font-semibold text-secondary' : 'text-on-surface-variant hover:text-on-surface',
-						]}
-					>
-						<Icon name={link.icon} class="text-[20px]" />
-						<span class="mt-0.5 text-label-sm">{link.label}</span>
-					</a>
+				site.nav.map((link) => (
+					<li class="flex-1">
+						<a
+							href={link.href}
+							class="flex h-15 flex-col items-center justify-center gap-1 text-cartel/70 transition-colors hover:text-cartel aria-[current=true]:text-cordon"
+						>
+							<Icon name={link.icon as any} class="size-5.5" />
+							<span class="rotulo text-[0.75rem] tracking-[0.04em]">{link.label}</span>
+						</a>
+					</li>
 				))
 			}
-		</div>
+		</ul>
 	</nav>
 </div>
+
+<script>
+	// Marca la sección visible en la barra inferior
+	const links = [...document.querySelectorAll<HTMLAnchorElement>('nav[aria-label="Secciones"] a[href^="#"]')];
+	const targets = links
+		.map((a) => document.querySelector<HTMLElement>(a.getAttribute('href')!))
+		.filter((el): el is HTMLElement => !!el);
+
+	const setCurrent = (id: string) => {
+		for (const a of links) {
+			if (a.getAttribute('href') === `#${id}`) a.setAttribute('aria-current', 'true');
+			else a.removeAttribute('aria-current');
+		}
+	};
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			for (const entry of entries) if (entry.isIntersecting) setCurrent(entry.target.id);
+		},
+		{ rootMargin: '-45% 0px -50% 0px' },
+	);
+	targets.forEach((t) => observer.observe(t));
+</script>

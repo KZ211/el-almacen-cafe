@@ -1,59 +1,41 @@
 ---
 import Icon from './Icon.astro';
-import { site } from '../data/site';
+import { site, whatsappLink } from '../data/site';
 ---
 
-<header
-	class="pt-safe fixed top-0 z-50 w-full bg-surface/85 shadow-[0_1px_12px_rgba(43,27,23,0.06)] backdrop-blur-xl"
->
-	<div class="flex h-16 items-center justify-between gap-space-sm px-margin md:mx-auto md:max-w-6xl md:px-8 md:h-18">
-		<a href="#inicio" class="flex min-w-0 items-center gap-space-sm">
-			<img src={site.logo} alt={`Logo ${site.name}`} width="32" height="32" class="h-8 w-8 shrink-0 rounded-md object-cover md:h-10 md:w-10" />
-			<div class="flex min-w-0 flex-col">
-				<span class="truncate font-headline text-headline-md leading-none tracking-tight text-primary">{site.name}</span>
-				<span class="mt-0.5 truncate text-label-sm tracking-widest text-secondary uppercase">
-					<span class="md:hidden">Inicio</span>
-					<span class="hidden md:inline">{site.tagline}</span>
-				</span>
-			</div>
+<!-- La pérgola: viga de hierro con los listones de pino colgando abajo -->
+<header class="pt-safe fixed inset-x-0 top-0 z-50 bg-hierro">
+	<div class="mx-auto flex h-13 max-w-6xl items-center justify-between gap-4 px-4 md:px-8">
+		<a href="#inicio" class="font-cartel text-[1.35rem] leading-none text-cartel" aria-label="El Almacén, inicio">
+			El Almacén
 		</a>
 
-		<!-- Navegación desktop: en mobile se usa el BottomNav -->
-		<nav aria-label="Principal" class="hidden md:flex md:items-center md:gap-1 lg:gap-space-sm">
-			{
-				site.nav.map((link) => (
-					<a
-						href={link.href}
-						class="rounded-full px-3 py-2 text-label-lg text-on-surface-variant transition-colors hover:bg-surface-container hover:text-primary"
-					>
-						{link.label}
-					</a>
-				))
-			}
+		<nav aria-label="Secciones" class="hidden md:block">
+			<ul class="flex items-center gap-1">
+				{
+					site.nav.slice(1).map((link) => (
+						<li>
+							<a
+								href={link.href}
+								class="rotulo block px-3 py-2 text-[0.8rem] text-cartel/80 underline-offset-[6px] transition-colors hover:text-cartel hover:underline hover:decoration-cordon hover:decoration-2"
+							>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
 		</nav>
 
-		<div class="flex shrink-0 items-center gap-space-xs">
-			<button
-				type="button"
-				aria-label="Buscar en la carta"
-				class="flex h-11 w-11 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container active:bg-surface-container-high"
-			>
-				<Icon name="search" class="text-[22px]" />
-			</button>
-			<div
-				class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_2px_8px_rgba(14,4,2,0.15)] md:hidden"
-			>
-				<Icon name="person" class="text-[18px] text-on-primary" />
-			</div>
-			<a
-				href={site.whatsappUrl}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="hidden h-11 items-center gap-space-xs rounded-xl bg-primary px-space-md text-label-md tracking-wider text-on-primary uppercase shadow-[0_4px_12px_rgba(14,4,2,0.2)] transition-colors hover:bg-primary-container lg:flex"
-			>
-				<Icon name="chat" class="text-[18px]" />
-				<span>Pedir</span>
-			</a>
-		</div>
+		<a
+			href={whatsappLink('¡Hola! Quiero hacer un pedido.')}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="rotulo hidden items-center gap-2 bg-cordon px-4 py-2 text-[0.8rem] text-tinta transition-colors hover:bg-pino-claro md:flex"
+		>
+			<Icon name="chat" class="size-4" />
+			Pedí por WhatsApp
+		</a>
 	</div>
+	<div class="listones h-7 shadow-[0_6px_10px_-4px_rgb(29_26_24/0.6)]" aria-hidden="true"></div>
 </header>

@@ -1,16 +1,40 @@
 ---
 import Icon from './Icon.astro';
-import { site } from '../data/site';
+import { whatsappLink } from '../data/site';
 ---
 
 <!-- Se renderiza dentro del contenedor fijo de BottomNav: queda anclado sobre la barra y se mueven juntos -->
 <a
-	href={site.whatsappUrl}
+	href={whatsappLink('¡Hola! Quiero hacer un pedido.')}
 	target="_blank"
 	rel="noopener noreferrer"
-	aria-label="Pedir por WhatsApp ahora"
-	class="pointer-events-auto absolute right-4 bottom-full mb-6 flex items-center gap-2 rounded-full bg-whatsapp py-2.5 pr-4 pl-3 text-label-md text-primary shadow-[0_6px_20px_rgba(37,211,102,0.4)] transition-transform active:scale-95 md:right-8 md:mb-8"
+	aria-label="Pedí por WhatsApp"
+	class="flotante rotulo pointer-events-auto absolute right-4 bottom-full mb-4 flex items-center gap-2 bg-cordon py-3 pr-4 pl-3.5 text-[0.85rem] text-tinta shadow-[0_10px_20px_-8px_rgb(29_26_24/0.6)] transition-transform active:translate-y-px md:hidden"
 >
-	<Icon name="chat" class="text-[24px]" />
-	<span class="font-bold tracking-tight">Pedir Helado</span>
+	<Icon name="chat" class="size-5" />
+	Pedí
 </a>
+
+<style>
+	/* Aparece recién cuando la placa amarilla del inicio sale de pantalla */
+	.flotante {
+		transition:
+			opacity 0.3s var(--ease-salida),
+			transform 0.3s var(--ease-salida);
+	}
+	:global(html.placa-visible) .flotante {
+		opacity: 0;
+		transform: translateY(8px);
+		pointer-events: none;
+	}
+</style>
+
+<script>
+	const placa = document.querySelector('.placa');
+	if (placa) {
+		document.documentElement.classList.add('placa-visible');
+		new IntersectionObserver(([entry]) => {
+			document.documentElement.classList.toggle('placa-visible', entry.isIntersecting);
+		}).observe(placa);
+	}
+</script>

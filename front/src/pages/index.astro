@@ -1,27 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import StatusRibbon from '../components/StatusRibbon.astro';
-import Pillars from '../components/Pillars.astro';
-import MenuDownload from '../components/MenuDownload.astro';
-import Gallery from '../components/Gallery.astro';
-import Reviews from '../components/Reviews.astro';
-import Location from '../components/Location.astro';
+import Esquina from '../components/Esquina.astro';
+import Vidrieras from '../components/Vidrieras.astro';
+import Gustos from '../components/Gustos.astro';
+import Pergola from '../components/Pergola.astro';
 import Footer from '../components/Footer.astro';
 import BottomNav from '../components/BottomNav.astro';
 ---
 
 <Layout>
 	<Header />
-	<main class="relative flex min-h-screen w-full flex-col bg-surface pt-16 pb-24 md:pt-18 md:pb-0">
-		<Hero />
-		<StatusRibbon />
-		<Pillars />
-		<MenuDownload />
-		<Gallery />
-		<Reviews />
-		<Location />
+	<main>
+		<Esquina />
+		<Vidrieras />
+		<Gustos />
+		<Pergola />
 	</main>
 	<Footer />
 	<BottomNav />
