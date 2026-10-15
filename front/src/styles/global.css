@@ -1,124 +1,122 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: false;
-}
+@import "@fontsource/young-serif/400.css";
+@import "@fontsource-variable/archivo/wdth.css";
 
-/* Tema daisyUI alineado con el design system (DESIGN.md) */
-@plugin "daisyui/theme" {
-  name: "almacen";
-  default: true;
-  prefersdark: false;
-  color-scheme: light;
-  --color-base-100: #fff8f2;
-  --color-base-200: #f5ede3;
-  --color-base-300: #e9e1d8;
-  --color-base-content: #1e1b15;
-  --color-primary: #0e0402;
-  --color-primary-content: #ffffff;
-  --color-secondary: #865225;
-  --color-secondary-content: #ffffff;
-  --color-accent: #cc6d2d;
-  --color-accent-content: #ffffff;
-  --color-neutral: #2b1b17;
-  --color-neutral-content: #f8f0e6;
-  --color-error: #ba1a1a;
-  --color-error-content: #ffffff;
-}
-
+/* La esquina de El Almacén: los colores salen del frente real del local. */
 @theme {
-  /* Colores */
-  --color-surface: #fff8f2;
-  --color-surface-dim: #e0d9cf;
-  --color-surface-bright: #fff8f2;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #faf2e8;
-  --color-surface-container: #f5ede3;
-  --color-surface-container-high: #efe7dd;
-  --color-surface-container-highest: #e9e1d8;
-  --color-on-surface: #1e1b15;
-  --color-on-surface-variant: #4f4442;
-  --color-inverse-surface: #343029;
-  --color-inverse-on-surface: #f8f0e6;
-  --color-outline: #817471;
-  --color-outline-variant: #d3c3c0;
-  --color-primary: #0e0402;
-  --color-on-primary: #ffffff;
-  --color-primary-container: #2b1b17;
-  --color-on-primary-container: #9a817b;
-  --color-secondary: #865225;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #fdb882;
-  --color-on-secondary-container: #78471b;
-  --color-secondary-fixed: #ffdcc3;
-  --color-secondary-fixed-dim: #fdb882;
-  --color-on-secondary-fixed: #2f1500;
-  --color-tertiary-container: #381500;
-  --color-on-tertiary-container: #cc6d2d;
-  --color-error: #ba1a1a;
-  --color-whatsapp: #25d366;
+  --color-muro: #8c2b23;
+  --color-muro-hondo: #5e1c17;
+  --color-muro-sol: #a3362b;
+  --color-cartel: #f6f4ef;
+  --color-cartel-sombra: #e6e1d8;
+  --color-tinta: #2b1a14;
+  --color-tinta-suave: #5b463c;
+  --color-pino: #d9a066;
+  --color-pino-claro: #eec594;
+  --color-pino-hondo: #9c6130;
+  --color-silla: #d23b2c;
+  --color-maceta: #db8c82;
+  --color-cordon: #ebbd34;
+  --color-cordon-hondo: #c99a17;
+  --color-vereda: #c8c3ba;
+  --color-vereda-hondo: #9d978d;
+  --color-hierro: #1d1a18;
+  --color-vidrio: #23201e;
 
-  /* Tipografías */
-  --font-headline: "Newsreader", serif;
-  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-cartel: "Young Serif", "Georgia", serif;
+  --font-texto: "Archivo Variable", "Helvetica Neue", Arial, sans-serif;
 
-  /* Escala tipográfica */
-  --text-headline-xl: 40px;
-  --text-headline-xl--line-height: 48px;
-  --text-headline-xl--letter-spacing: -0.02em;
-  --text-headline-xl--font-weight: 600;
-  --text-headline-xl-mobile: 32px;
-  --text-headline-xl-mobile--line-height: 38px;
-  --text-headline-xl-mobile--letter-spacing: -0.01em;
-  --text-headline-xl-mobile--font-weight: 600;
-  --text-headline-lg: 30px;
-  --text-headline-lg--line-height: 36px;
-  --text-headline-lg--font-weight: 600;
-  --text-headline-lg-mobile: 24px;
-  --text-headline-lg-mobile--line-height: 30px;
-  --text-headline-lg-mobile--font-weight: 600;
-  --text-headline-md: 20px;
-  --text-headline-md--line-height: 26px;
-  --text-headline-md--font-weight: 500;
-  --text-body-lg: 16px;
-  --text-body-lg--line-height: 24px;
-  --text-body-md: 14px;
-  --text-body-md--line-height: 20px;
-  --text-body-sm: 12px;
-  --text-body-sm--line-height: 18px;
-  --text-label-lg: 14px;
-  --text-label-lg--line-height: 20px;
-  --text-label-lg--letter-spacing: 0.04em;
-  --text-label-lg--font-weight: 600;
-  --text-label-md: 12px;
-  --text-label-md--line-height: 16px;
-  --text-label-md--letter-spacing: 0.05em;
-  --text-label-md--font-weight: 600;
-  --text-label-sm: 11px;
-  --text-label-sm--line-height: 14px;
-  --text-label-sm--letter-spacing: 0.06em;
-  --text-label-sm--font-weight: 700;
-
-  /* Espaciado (ritmo de 8px) */
-  --spacing-gutter: 1rem;
-  --spacing-margin: 1rem;
-  --spacing-space-xs: 0.25rem;
-  --spacing-space-sm: 0.5rem;
-  --spacing-space-md: 1rem;
-  --spacing-space-lg: 1.5rem;
-  --spacing-space-xl: 2.25rem;
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
-    @variant md {
-      scroll-padding-top: 4.5rem;
-    }
+    scroll-padding-top: 4.5rem;
+    color-scheme: light;
+    scrollbar-color: var(--color-pino-hondo) var(--color-muro-hondo);
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
   body {
-    overscroll-behavior: none;
+    font-family: var(--font-texto);
+    font-stretch: 100%;
+    background: var(--color-muro-hondo);
+    color: var(--color-cartel);
+    caret-color: var(--color-cordon);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
+  ::selection {
+    background: var(--color-cordon);
+    color: var(--color-tinta);
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-cordon);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-cartel);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+}
+
+/* Revoque del muro: grano fino sobre el bordó */
+@utility revoque {
+  background-color: var(--color-muro);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(120% 80% at 70% 10%, var(--color-muro-sol), transparent 60%);
+  background-blend-mode: multiply, normal;
+}
+
+/* Listones de pino de la pérgola, vistos de frente */
+@utility listones {
+  background-color: #2a0f0b;
+  background-image:
+    linear-gradient(rgb(20 8 4 / 0.55), transparent 35%, transparent 80%, rgb(20 8 4 / 0.35)),
+    repeating-linear-gradient(90deg, transparent 0 37px, rgb(60 25 8 / 0.18) 37px 38px, transparent 38px 61px),
+    repeating-linear-gradient(
+      90deg,
+      var(--color-pino-claro) 0 1.5px,
+      var(--color-pino) 1.5px 8px,
+      #c98d52 8px 13px,
+      var(--color-pino-hondo) 13px 15px,
+      transparent 15px 19px,
+      var(--color-pino-claro) 19px 20.5px,
+      var(--color-pino) 20.5px 27px,
+      #c98d52 27px 31px,
+      var(--color-pino-hondo) 31px 33px,
+      transparent 33px 39px
+    );
+}
+
+/* Sombra a rayas que la pérgola tira sobre todo lo que hay abajo */
+@utility sombra-pergola {
+  background-image: repeating-linear-gradient(
+    var(--angulo-sol, 74deg),
+    rgb(38 8 6 / 0.28) 0 26px,
+    transparent 26px 62px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* Cordón amarillo y vereda */
+@utility vereda {
+  background-color: var(--color-vereda);
+  background-image:
+    linear-gradient(var(--color-cordon) 0 10px, var(--color-cordon-hondo) 10px 13px, transparent 13px),
+    repeating-linear-gradient(90deg, transparent 0 119px, var(--color-vereda-hondo) 119px 120px);
+}
+
+/* Pie: solo el cordón, sin juntas detrás del texto */
+.vereda--lisa {
+  background-image: linear-gradient(var(--color-cordon) 0 10px, var(--color-cordon-hondo) 10px 13px, transparent 13px);
 }
 
 @utility pb-safe {
@@ -129,3 +127,10 @@
   padding-top: env(safe-area-inset-top, 0px);
 }
 
+@utility rotulo {
+  font-family: var(--font-texto);
+  font-stretch: 78%;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

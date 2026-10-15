@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T18:56:46Z",
+  "title": "Design System: El Almacén",
+  "extensions": {
+    "colorMeta": {
+      "muro": {
+        "role": "primary",
+        "displayName": "Muro (Oxblood Wall)",
+        "canonical": "#8c2b23",
+        "tonalRamp": [
+          "#1a0403",
+          "#43120e",
+          "#71251e",
+          "#9f3d33",
+          "#c55f53",
+          "#ed8275",
+          "#ffafa2",
+          "#ffddd3"
+        ]
+      },
+      "muro-hondo": {
+        "role": "primary",
+        "displayName": "Muro Hondo (Deep Wall)",
+        "canonical": "#5e1c17",
+        "tonalRamp": [
+          "#160605",
+          "#3c1915",
+          "#662f29",
+          "#904a41",
+          "#b56b61",
+          "#db8d83",
+          "#f7b7ae",
+          "#ffe2db"
+        ]
+      },
+      "muro-sol": {
+        "role": "primary",
+        "displayName": "Muro Sol (Sun-warmed Wall)",
+        "canonical": "#a3362b",
+        "tonalRamp": [
+          "#1b0302",
+          "#450f0a",
+          "#752018",
+          "#a4372c",
+          "#cb5a4d",
+          "#f37e6e",
+          "#ffac9e",
+          "#ffdbd0"
+        ]
+      },
+      "pino": {
+        "role": "secondary",
+        "displayName": "Pino (Pine Slat)",
+        "canonical": "#d9a066",
+        "tonalRamp": [
+          "#140800",
+          "#381e01",
+          "#5f3702",
+          "#875414",
+          "#ab753b",
+          "#d0985e",
+          "#eebf92",
+          "#ffe8c9"
+        ]
+      },
+      "pino-claro": {
+        "role": "secondary",
+        "displayName": "Pino Claro (Gold-leaf Pine)",
+        "canonical": "#eec594",
+        "tonalRamp": [
+          "#120902",
+          "#332109",
+          "#573c16",
+          "#7d592a",
+          "#a07a4b",
+          "#c59d6d",
+          "#e3c39d",
+          "#ffead0"
+        ]
+      },
+      "pino-hondo": {
+        "role": "secondary",
+        "displayName": "Pino Hondo (Slat Edge)",
+        "canonical": "#9c6130",
+        "tonalRamp": [
+          "#150701",
+          "#391d04",
+          "#62350c",
+          "#8b511e",
+          "#af7242",
+          "#d49564",
+          "#f1bd96",
+          "#ffe6cb"
+        ]
+      },
+      "cordon": {
+        "role": "secondary",
+        "displayName": "Cordón (Curb Yellow)",
+        "canonical": "#ebbd34",
+        "tonalRamp": [
+          "#130900",
+          "#362100",
+          "#5c3b00",
+          "#845900",
+          "#a77b00",
+          "#cb9e00",
+          "#e9c567",
+          "#ffecaf"
+        ]
+      },
+      "cordon-hondo": {
+        "role": "secondary",
+        "displayName": "Cordón Hondo (Curb Lip)",
+        "canonical": "#c99a17",
+        "tonalRamp": [
+          "#140900",
+          "#362000",
+          "#5d3b00",
+          "#845800",
+          "#a87a00",
+          "#cc9d1e",
+          "#eac471",
+          "#ffecb4"
+        ]
+      },
+      "maceta": {
+        "role": "tertiary",
+        "displayName": "Maceta (Planter Pink)",
+        "canonical": "#db8c82",
+        "tonalRamp": [
+          "#170605",
+          "#3c1915",
+          "#662f29",
+          "#914941",
+          "#b66a61",
+          "#dc8d83",
+          "#f8b6ae",
+          "#ffe2db"
+        ]
+      },
+      "silla": {
+        "role": "tertiary",
+        "displayName": "Silla (Chair Red)",
+        "canonical": "#d23b2c",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0000",
+          "#810000",
+          "#b4170c",
+          "#dd4636",
+          "#ff6d59",
+          "#ffa18e",
+          "#ffd5c6"
+        ]
+      },
+      "cartel": {
+        "role": "neutral",
+        "displayName": "Cartel (Sign White)",
+        "canonical": "#f6f4ef",
+        "tonalRamp": [
+          "#0c0b08",
+          "#262521",
+          "#43423e",
+          "#63615d",
+          "#84827e",
+          "#a7a5a0",
+          "#cbc9c4",
+          "#f0eee9"
+        ]
+      },
+      "cartel-sombra": {
+        "role": "neutral",
+        "displayName": "Cartel Sombra (Sign Edge)",
+        "canonical": "#e6e1d8",
+        "tonalRamp": [
+          "#0e0b05",
+          "#28251e",
+          "#45413a",
+          "#656159",
+          "#86827a",
+          "#a9a49c",
+          "#cdc8c0",
+          "#f3eee5"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta (Sign Ink)",
+        "canonical": "#2b1a14",
+        "tonalRamp": [
+          "#0f0a08",
+          "#2d221f",
+          "#4e3e38",
+          "#715c55",
+          "#937d75",
+          "#b69f97",
+          "#d7c4be",
+          "#f9ebe6"
+        ]
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Tinta Suave (Faded Ink)",
+        "canonical": "#5b463c",
+        "tonalRamp": [
+          "#0f0a07",
+          "#2d221d",
+          "#4f3e36",
+          "#725c51",
+          "#947d72",
+          "#b89f94",
+          "#d9c4bb",
+          "#f9ebe4"
+        ]
+      },
+      "hierro": {
+        "role": "neutral",
+        "displayName": "Hierro (Steel)",
+        "canonical": "#1d1a18",
+        "tonalRamp": [
+          "#0d0b09",
+          "#272422",
+          "#45413f",
+          "#64605e",
+          "#85817f",
+          "#a8a4a1",
+          "#ccc8c5",
+          "#f2edeb"
+        ]
+      },
+      "vidrio": {
+        "role": "neutral",
+        "displayName": "Vidrio (Window Glass)",
+        "canonical": "#23201e",
+        "tonalRamp": [
+          "#0d0b09",
+          "#272422",
+          "#45413f",
+          "#64605e",
+          "#85817f",
+          "#a8a4a1",
+          "#ccc8c5",
+          "#f2edeb"
+        ]
+      },
+      "vereda": {
+        "role": "neutral",
+        "displayName": "Vereda (Sidewalk)",
+        "canonical": "#c8c3ba",
+        "tonalRamp": [
+          "#0e0b05",
+          "#28251e",
+          "#46413a",
+          "#656159",
+          "#868279",
+          "#a9a49c",
+          "#cdc8bf",
+          "#f3eee4"
+        ]
+      },
+      "vereda-hondo": {
+        "role": "neutral",
+        "displayName": "Vereda Hondo (Tile Joint)",
+        "canonical": "#9d978d",
+        "tonalRamp": [
+          "#0f0a04",
+          "#29241c",
+          "#464139",
+          "#666057",
+          "#878178",
+          "#aaa49a",
+          "#cfc8be",
+          "#f4eee3"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Sign Lettering",
+        "purpose": "The sign's ALMACÉN lettering and the shop-window titles."
+      },
+      "headline": {
+        "displayName": "Section Heading",
+        "purpose": "Section headings and the hero line."
+      },
+      "title": {
+        "displayName": "Board Title",
+        "purpose": "Flavor names, address, wordmark."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Leads and supporting text, 30 to 46ch."
+      },
+      "label": {
+        "displayName": "Sign-Painter Caps",
+        "purpose": "Nav, buttons, format lists, data labels, hours line."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hung-panel",
+        "value": "0 18px 30px -12px rgb(30 6 4 / 0.55), 0 4px 8px -2px rgb(30 6 4 / 0.35)",
+        "purpose": "Sign and flavor board hung on the wall."
+      },
+      {
+        "name": "plate",
+        "value": "0 10px 20px -10px rgb(30 6 4 / 0.7)",
+        "purpose": "Yellow action plate."
+      },
+      {
+        "name": "plate-hover",
+        "value": "0 14px 24px -12px rgb(30 6 4 / 0.75)",
+        "purpose": "Action plate on hover."
+      },
+      {
+        "name": "recess",
+        "value": "inset 0 10px 14px -6px rgb(20 4 3 / 0.75), inset 0 -2px 0 rgb(255 255 255 / 0.06)",
+        "purpose": "Window openings set into the wall."
+      },
+      {
+        "name": "slat-shade",
+        "value": "0 6px 10px -4px rgb(29 26 24 / 0.6)",
+        "purpose": "Pergola band over content."
+      },
+      {
+        "name": "night-glow",
+        "value": "0 0 0 1px rgb(255 236 200 / 0.4), 0 0 70px 6px rgb(255 214 150 / 0.28), 0 18px 30px -12px rgb(0 0 0 / 0.6)",
+        "purpose": "Lit sign after sunset."
+      },
+      {
+        "name": "pergola-stripes",
+        "value": "repeating-linear-gradient(var(--angulo-sol, 74deg), rgb(38 8 6 / 0.28) 0 26px, transparent 26px 62px); mix-blend-mode: multiply",
+        "purpose": "Signature shadow; angle 58 to 122deg from 07:00 to 20:00, absent at night."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-salida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Every eased transition: plate press, arrow nudge, shadow settle, floating button."
+      },
+      {
+        "name": "shadow-settle",
+        "value": "opacity and blur 1.6s ease-salida, from blur(10px) opacity 0.4 to blur(2px) opacity 1",
+        "purpose": "Pergola shadow entrance; skipped under reduced motion."
+      },
+      {
+        "name": "shadow-drift",
+        "value": "translateY(scrollY * 0.18), capped at one viewport",
+        "purpose": "Shadow drifts with scroll; disabled under reduced motion."
+      },
+      {
+        "name": "state",
+        "value": "0.2s to 0.3s",
+        "purpose": "Color and hover transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Placa (Primary WhatsApp Plate)",
+      "kind": "button",
+      "refersTo": "button-placa",
+      "description": "Curb-yellow plate for the WhatsApp order action; the only yellow surface.",
+      "html": "<a href=\"#\" class=\"ds-placa\"><span class=\"ds-placa-l\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 19.5l1.3-3.8A8 8 0 1 1 8.6 19zM9 10.5h.01M12 10.5h.01M15 10.5h.01\"/></svg><span>Pedí por WhatsApp</span></span><span class=\"ds-placa-arrow\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a>",
+      "css": ".ds-placa { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-width: 300px; background: #ebbd34; color: #2b1a14; padding: 16px 20px; text-decoration: none; border-radius: 0; box-shadow: 0 10px 20px -10px rgb(30 6 4 / 0.7); transition: background-color .25s, box-shadow .25s, transform .25s cubic-bezier(0.16,1,0.3,1); } .ds-placa-l { display: flex; align-items: center; gap: 12px; font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 1.05rem; } .ds-placa-arrow { display: flex; transition: transform .3s cubic-bezier(0.16,1,0.3,1); } .ds-placa:hover { background: #eec594; box-shadow: 0 14px 24px -12px rgb(30 6 4 / 0.75); } .ds-placa:hover .ds-placa-arrow { transform: translateX(4px); } .ds-placa:active { transform: translateY(1px); } .ds-placa:focus-visible { outline: 3px solid #ebbd34; outline-offset: 3px; }"
+    },
+    {
+      "name": "Dark Plate",
+      "kind": "button",
+      "refersTo": "button-tinta",
+      "description": "Ink plate for secondary actions on sign-white or pine ground.",
+      "html": "<a href=\"#\" class=\"ds-btn-tinta\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 19.5l1.3-3.8A8 8 0 1 1 8.6 19zM9 10.5h.01M12 10.5h.01M15 10.5h.01\"/></svg>¿Qué hay hoy?</a>",
+      "css": ".ds-btn-tinta { display: inline-flex; align-items: center; gap: 12px; background: #2b1a14; color: #f6f4ef; padding: 16px 20px; font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; text-decoration: none; border-radius: 0; transition: background-color .2s; } .ds-btn-tinta:hover { background: #8c2b23; } .ds-btn-tinta:focus-visible { outline: 3px solid #ebbd34; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Plate",
+      "kind": "button",
+      "refersTo": "button-tinta-outline",
+      "description": "2px ink outline plate on pine; fills with ink on hover.",
+      "html": "<div class=\"ds-pino-bg\"><a href=\"#\" class=\"ds-btn-outline\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 19.5l1.3-3.8A8 8 0 1 1 8.6 19zM9 10.5h.01M12 10.5h.01M15 10.5h.01\"/></svg>Pedí con envío</a></div>",
+      "css": ".ds-pino-bg { background: #d9a066; padding: 24px; } .ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; border: 2px solid #2b1a14; color: #2b1a14; padding: 14px 20px; font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; text-decoration: none; border-radius: 0; transition: background-color .2s, color .2s; } .ds-btn-outline:hover { background: #2b1a14; color: #f6f4ef; } .ds-btn-outline:focus-visible { outline: 3px solid #ebbd34; outline-offset: 3px; }"
+    },
+    {
+      "name": "Lettered Link",
+      "kind": "button",
+      "refersTo": "button-tinta-outline",
+      "description": "Caps link with a 2px curb underline on the dark wall.",
+      "html": "<div class=\"ds-muro-bg\"><a href=\"#\" class=\"ds-link\">Pedí helados por WhatsApp <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-muro-bg { background: #23201e; padding: 24px; } .ds-link { display: inline-flex; align-items: center; gap: 8px; color: #ebbd34; border-bottom: 2px solid #ebbd34; padding-bottom: 4px; font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; text-decoration: none; transition: color .2s, border-color .2s; } .ds-link:hover { color: #f6f4ef; border-color: #f6f4ef; } .ds-link:focus-visible { outline: 3px solid #ebbd34; outline-offset: 3px; }"
+    },
+    {
+      "name": "Cartel (Sign Panel)",
+      "kind": "custom",
+      "refersTo": "panel-cartel",
+      "description": "The white sign hung on the wall, crossed by the pergola shadow.",
+      "html": "<div class=\"ds-wall\"><div class=\"ds-cartel\"><div class=\"ds-cartel-shade\"></div><div class=\"ds-cartel-el\">EL</div><div class=\"ds-cartel-tag\">Helados &amp; Café</div><div class=\"ds-cartel-name\">ALMACÉN</div></div></div>",
+      "css": ".ds-wall { background: radial-gradient(120% 80% at 70% 10%, #a3362b, transparent 60%), #8c2b23; padding: 48px 24px; } .ds-cartel { position: relative; overflow: hidden; isolation: isolate; max-width: 34rem; margin: 0 auto; background: #f6f4ef; color: #2b1a14; padding: 32px 40px 36px; text-align: center; box-shadow: 0 1px 0 #e6e1d8 inset, 0 18px 30px -12px rgb(30 6 4 / 0.55), 0 4px 8px -2px rgb(30 6 4 / 0.35); } .ds-cartel-shade { position: absolute; inset: -40%; z-index: -1; background-image: repeating-linear-gradient(74deg, rgb(38 8 6 / 0.28) 0 26px, transparent 26px 62px); mix-blend-mode: multiply; filter: blur(2px); } .ds-cartel-el { font-family: 'Young Serif',Georgia,serif; font-weight: 400; font-size: 3.2rem; line-height: 1; letter-spacing: 0.04em; } .ds-cartel-tag { font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.32em; color: #5b463c; margin-top: 4px; } .ds-cartel-name { font-family: 'Young Serif',Georgia,serif; font-weight: 400; font-size: 5rem; line-height: 1; letter-spacing: 0.02em; margin-top: 12px; }"
+    },
+    {
+      "name": "Vidriera (Shop Window)",
+      "kind": "card",
+      "refersTo": "panel-vidriera",
+      "description": "Recessed window in the wall: glass pane, steel frame, gold-leaf lettering.",
+      "html": "<div class=\"ds-vidriera\"><div class=\"ds-vidrio\"><h3 class=\"ds-vid-title\">HELADOS</h3><p class=\"ds-vid-lead\">Para llevar a casa o para comer caminando.</p><ul class=\"ds-vid-items\"><li>Cucurucho</li><li>Vasito</li><li>¼ kg</li></ul></div></div>",
+      "css": ".ds-vidriera { background: #5e1c17; padding: 12px; max-width: 30rem; box-shadow: inset 0 10px 14px -6px rgb(20 4 3 / 0.75), inset 0 -2px 0 rgb(255 255 255 / 0.06); } .ds-vidrio { background: #23201e; box-shadow: inset 0 0 0 4px #1d1a18; padding: 56px 40px 40px; } .ds-vid-title { font-family: 'Young Serif',Georgia,serif; font-weight: 400; margin: 0; font-size: 4.4rem; line-height: 0.9; letter-spacing: 0.02em; color: #eec594; text-shadow: 0 1px 0 #9c6130; } .ds-vid-lead { margin: 20px 0 0; font-family: 'Archivo Variable',Arial,sans-serif; font-size: 1.05rem; line-height: 1.625; color: rgb(246 244 239 / 0.85); max-width: 30ch; } .ds-vid-items { list-style: none; padding: 0; margin: 32px 0 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85rem; color: #eec594; }"
+    },
+    {
+      "name": "Header with Pergola Slats",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Steel bar with serif wordmark and caps links; pine slats hang beneath.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header-bar\"><a href=\"#\" class=\"ds-wordmark\">El Almacén</a><nav class=\"ds-header-nav\"><a href=\"#\">Helados</a><a href=\"#\">Café</a><a href=\"#\">Gustos</a><a href=\"#\">Visitanos</a></nav></div><div class=\"ds-slats\"></div></header>",
+      "css": ".ds-header { background: #1d1a18; } .ds-header-bar { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; } .ds-wordmark { font-family: 'Young Serif',Georgia,serif; font-weight: 400; font-size: 1.35rem; color: #f6f4ef; text-decoration: none; } .ds-header-nav { display: flex; gap: 4px; } .ds-header-nav a { font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem; padding: 8px 12px; color: rgb(246 244 239 / 0.8); text-decoration: none; text-underline-offset: 6px; transition: color .2s; } .ds-header-nav a:hover { color: #f6f4ef; text-decoration: underline; text-decoration-color: #ebbd34; text-decoration-thickness: 2px; } .ds-header-nav a:focus-visible { outline: 3px solid #ebbd34; outline-offset: 3px; } .ds-slats { height: 28px; background-color: #2a0f0b; background-image: linear-gradient(rgb(20 8 4 / 0.55), transparent 35%, transparent 80%, rgb(20 8 4 / 0.35)), repeating-linear-gradient(90deg, #eec594 0 1.5px, #d9a066 1.5px 8px, #c98d52 8px 13px, #9c6130 13px 15px, transparent 15px 19px, #eec594 19px 20.5px, #d9a066 20.5px 27px, #c98d52 27px 31px, #9c6130 31px 33px, transparent 33px 39px); box-shadow: 0 6px 10px -4px rgb(29 26 24 / 0.6); }"
+    },
+    {
+      "name": "Bottom Nav (phones)",
+      "kind": "nav",
+      "refersTo": "nav-bottom",
+      "description": "Fixed steel bar with icon-over-label links; current section in curb yellow.",
+      "html": "<nav class=\"ds-bnav\"><a href=\"#\" class=\"ds-bnav-a\" aria-current=\"true\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 11 12 4l8 7M6 9.5V20h12V9.5M10 20v-5h4v5\"/></svg><span>Inicio</span></a><a href=\"#\" class=\"ds-bnav-a\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z\"/></svg><span>Visitanos</span></a></nav>",
+      "css": ".ds-bnav { display: flex; background: #1d1a18; max-width: 390px; } .ds-bnav-a { flex: 1; height: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: rgb(246 244 239 / 0.7); text-decoration: none; transition: color .2s; } .ds-bnav-a span { font-family: 'Archivo Variable','Helvetica Neue',Arial,sans-serif; font-stretch: 78%; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; } .ds-bnav-a:hover { color: #f6f4ef; } .ds-bnav-a[aria-current=true] { color: #ebbd34; } .ds-bnav-a:focus-visible { outline: 3px solid #ebbd34; outline-offset: 3px; }"
+    },
+    {
+      "name": "Curb and Sidewalk",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Yellow curb over grey sidewalk tiles; closes the hero and tops the footer.",
+      "html": "<div class=\"ds-vereda\"></div>",
+      "css": ".ds-vereda { height: 80px; background-color: #c8c3ba; background-image: linear-gradient(#ebbd34 0 10px, #c99a17 10px 13px, transparent 13px), repeating-linear-gradient(90deg, transparent 0 119px, #9d978d 119px 120px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La esquina",
+    "overview": "The page is the corner where the shop stands, built from its real materials: an oxblood stucco wall, a white painted sign with dark serif lettering, a pine-slat pergola on black steel posts, a yellow-painted curb and a grey sidewalk. Every region of the page is one of those surfaces, not a card floating on a neutral ground. The wall is the ground of whole sections; the sign-white appears only as painted panels hung on it; pine and steel frame the top; the curb and sidewalk close the page.\n\nThe world is lettered, not carded. Hierarchy comes from sign-painter type (a heavy display serif and condensed bold caps), from material changes between sections, and from the pergola's striped shadow falling across everything below it. That shadow is the signature: its angle follows the visitor's local hour, it drifts slightly with scroll, it settles from blurred to sharp on load, and at night it is gone and the sign glows instead.\n\nDensity is low and confident: few elements per section, large type, generous section padding. Corners are square throughout. The site rejects the café-landing template (photo hero, cream ground, rows of cards, fabricated reviews) and anything that reads as a chain or as cold premium minimalism.",
+    "keyCharacteristics": [
+      "Drenched oxblood wall as the page ground, with fine plaster grain.",
+      "Sign-white panels with dark-brown Young Serif lettering.",
+      "Pine slats and black steel as framing, never as decoration.",
+      "Curb yellow owns the primary action.",
+      "Striped pergola shadow tied to the real hour; night replaces it with a glowing sign.",
+      "Square corners, hand-drawn single-stroke icons, condensed caps labels.",
+      "Unconfirmed content is visibly marked as provisional."
+    ],
+    "rules": [
+      {
+        "name": "The Curb Owns the Action Rule",
+        "body": "Curb yellow marks the WhatsApp order action and focus. Any other yellow surface competes with it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Material Ground Rule",
+        "body": "Sections sit on a storefront material (wall, pine, sidewalk), never on a neutral off-white. Sign-white exists only as a bounded painted panel.",
+        "section": "colors"
+      },
+      {
+        "name": "The Painted Letter Rule",
+        "body": "Headings are Young Serif at 400 with balanced wrapping; never bold it or italicize it, and never set body copy in it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sign-Painter Caps Rule",
+        "body": "Every functional label is the condensed bold caps style. It is not used for decorative overlines above headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The Pergola Shadow Rule",
+        "body": "The striped shadow (dark bands 26px, gap 36px, multiply) is the world's signature. Its angle comes from the local hour between 07:00 and 20:00 (58 to 122 degrees); outside that range it disappears and the sign glows. It drifts with scroll only when motion is allowed, and under reduced motion it appears settled, without the blur-in.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Shadow Belongs to the Wall Rule",
+        "body": "Shadow color is a dark tint of the wall (around rgb(30 6 4)), never neutral black on a light ground.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do build each section on a storefront material (wall, pine, sidewalk) and hang sign-white panels on it.",
+      "Do give the WhatsApp order action the curb-yellow plate, and keep yellow for that action, focus and the open light.",
+      "Do keep helados and café as equal panes with the same size and treatment.",
+      "Do gate every unconfirmed fact behind its data flag and label it \"a confirmar\" while it stays provisional.",
+      "Do drive the pergola shadow from the real hour and drop it at night in favor of the glowing sign.",
+      "Do tint shadows with the wall's dark red."
+    ],
+    "donts": [
+      "Don't add generic cards, a cream page ground or a photo hero.",
+      "Don't fabricate ratings, reviews, origins or dietary claims, or show unconfirmed hours as open or closed.",
+      "Don't round corners on plates, panels or windows.",
+      "Don't use hard offset shadows or neutral grey drop shadows.",
+      "Don't put caps overlines or eyebrows above headings; headings stand alone in Young Serif.",
+      "Don't use emoji or icon-font glyphs; draw icons in the single-stroke set."
+    ]
+  }
+}

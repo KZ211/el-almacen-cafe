@@ -1,0 +1,79 @@
+---
+import { existsSync } from 'node:fs';
+import Icon from './Icon.astro';
+import { site, whatsappLink } from '../data/site';
+
+// La foto real del frente se muestra solo si está en public/
+const hasPhoto = existsSync(new URL(`../../public${site.storefrontPhoto}`, import.meta.url));
+const closesLabel = site.hours.closes === '24:00' ? '00:00' : site.hours.closes;
+const hoursText = site.hours.confirmed ? `${site.hours.opens} a ${closesLabel}` : 'A confirmar';
+---
+
+<!-- Bajo la pérgola: madera de pino, la sombra a rayas y los datos para venir -->
+<section id="visitanos" class="pergola relative isolate overflow-hidden bg-pino px-4 py-20 text-tinta md:px-8 md:py-28" aria-labelledby="visitanos-titulo">
+	<div class="sombra-pergola pointer-events-none absolute inset-0 -z-10 opacity-40 [--angulo-sol:100deg]" aria-hidden="true"></div>
+
+	<div class:list={["mx-auto grid max-w-6xl gap-12 lg:gap-16", hasPhoto && "lg:grid-cols-[1.1fr_1fr]"]}>
+		<div class="flex flex-col">
+			<h2 id="visitanos-titulo" class="text-[clamp(2.5rem,9vw,4.5rem)] leading-[0.95]">Vení a sentarte bajo la pérgola</h2>
+			<p class="mt-6 max-w-[44ch] text-[1.1rem] leading-relaxed text-tinta/80">
+				Mesas afuera, sillas rojas y sombra a rayas. Estamos en la esquina; si no podés venir, te lo llevamos.
+			</p>
+
+			<dl class="mt-10 grid gap-px bg-tinta/20 sm:grid-cols-2">
+				<div class="flex flex-col gap-1 bg-pino-claro p-5">
+					<dt class="rotulo flex items-center gap-2 text-[0.8rem] text-tinta/70"><Icon name="reloj" class="size-4" />Horario</dt>
+					<dd class="text-[1.6rem] leading-tight font-semibold tabular-nums [font-stretch:85%]">{hoursText}</dd>
+					{site.hours.confirmed && <dd class="text-[0.95rem] text-tinta/75">{site.hours.days}</dd>}
+				</div>
+				<div class="flex flex-col gap-1 bg-pino-claro p-5">
+					<dt class="rotulo flex items-center gap-2 text-[0.8rem] text-tinta/70"><Icon name="pin" class="size-4" />Dirección</dt>
+					<dd class="font-cartel text-[1.5rem] leading-tight">{site.address}</dd>
+					<dd>
+						<a
+							href={site.mapsUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-[0.95rem] text-tinta underline decoration-tinta/40 decoration-2 underline-offset-4 hover:decoration-muro"
+						>Abrir en Google Maps</a>
+					</dd>
+				</div>
+			</dl>
+
+			<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+				<a
+					href={site.mapsUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="rotulo flex items-center justify-center gap-2 bg-tinta px-5 py-4 text-[0.95rem] text-cartel transition-colors hover:bg-muro"
+				>
+					<Icon name="ruta" class="size-5" />
+					Cómo llegar
+				</a>
+				<a
+					href={whatsappLink('¡Hola! Quiero pedir con envío.')}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="rotulo flex items-center justify-center gap-2 border-2 border-tinta px-5 py-[0.875rem] text-[0.95rem] transition-colors hover:bg-tinta hover:text-cartel"
+				>
+					<Icon name="chat" class="size-5" />
+					Pedí con envío
+				</a>
+			</div>
+		</div>
+
+		{
+			hasPhoto && (
+				<figure class="self-start bg-hierro p-2.5 shadow-[0_24px_40px_-20px_rgb(60_30_10/0.7)]">
+					<img
+						src={site.storefrontPhoto}
+						alt="El frente de El Almacén: una esquina pintada de bordó, el cartel blanco y la pérgola de madera con mesas y sillas rojas en la vereda."
+						loading="lazy"
+						class="aspect-[4/3] w-full object-cover"
+					/>
+					<figcaption class="rotulo px-1 pt-2.5 pb-0.5 text-[0.75rem] text-cartel/70">La esquina, de día</figcaption>
+				</figure>
+			)
+		}
+	</div>
+</section>
